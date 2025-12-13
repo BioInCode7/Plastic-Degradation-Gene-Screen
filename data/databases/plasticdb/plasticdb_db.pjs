@@ -1,0 +1,24 @@
+{
+  "version": "1.2",
+  "dbname": "plasticdb_db",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "data/databases/plasticdb/plasticdb_proteins.faa",
+  "number-of-letters": 55692,
+  "number-of-sequences": 165,
+  "last-updated": "2025-12-13T23:39:00",
+  "number-of-volumes": 1,
+  "bytes-total": 127756,
+  "bytes-to-cache": 57314,
+  "files": [
+    "plasticdb_db.pdb",
+    "plasticdb_db.phr",
+    "plasticdb_db.pin",
+    "plasticdb_db.pog",
+    "plasticdb_db.pos",
+    "plasticdb_db.pot",
+    "plasticdb_db.psq",
+    "plasticdb_db.ptf",
+    "plasticdb_db.pto"
+  ]
+}

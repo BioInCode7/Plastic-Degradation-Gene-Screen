@@ -1,0 +1,24 @@
+{
+  "version": "1.2",
+  "dbname": "pazy_db",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "data/databases/pazy/pazy_proteins.nr.faa",
+  "number-of-letters": 6353,
+  "number-of-sequences": 22,
+  "last-updated": "2025-12-13T23:58:00",
+  "number-of-volumes": 1,
+  "bytes-total": 59849,
+  "bytes-to-cache": 6680,
+  "files": [
+    "pazy_db.pdb",
+    "pazy_db.phr",
+    "pazy_db.pin",
+    "pazy_db.pog",
+    "pazy_db.pos",
+    "pazy_db.pot",
+    "pazy_db.psq",
+    "pazy_db.ptf",
+    "pazy_db.pto"
+  ]
+}

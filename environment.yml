@@ -1,0 +1,32 @@
+name: plastic-gene-screen
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # Core
+  - python=3.10
+  - pip
+
+  # Quality control
+  - fastp
+
+  # Assembly
+  - megahit
+
+  # Gene prediction
+  - prodigal
+
+  # Functional screening
+  - blast
+
+  # Sequence utilities
+  - seqkit
+
+  # Data handling & plotting
+  - pandas
+  - matplotlib
+
+  # Data download
+  - sra-tools

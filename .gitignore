@@ -205,3 +205,35 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+############################
+# Bioinformatics data policy
+############################
+
+# Raw sequencing data
+data/raw/
+data/qc/
+
+# Large intermediate assembly files
+data/assembly/*/intermediate_contigs/
+data/assembly/*/log/
+
+# Gene prediction intermediates (can be regenerated)
+data/genes/*.fna
+data/genes/*.gff
+
+# BLAST databases (index files)
+*.pin
+*.phr
+*.psq
+*.pdb
+*.pot
+*.ptf
+*.pto
+*.pjs
+*.pog
+*.pos
+
+# Temporary / local history files
+.Rhistory

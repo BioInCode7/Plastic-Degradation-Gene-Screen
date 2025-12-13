@@ -95,6 +95,12 @@ The workflow will be implemented using:
 
 ---
 
+## 📥 Dataset público seleccionado
+
+- **Sediment shotgun metagenome from arid-tropical natural wetlands** (BioProject **PRJNA972844**).  
+  Secuencias crudas disponibles en NCBI SRA (por ejemplo, SRX20358958, SRX20358957, …).  
+
+
 ## 👤 Author
 
 Jesús Salinas - Postodtoral Reasearcher UAL

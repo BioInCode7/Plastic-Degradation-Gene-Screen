@@ -71,18 +71,22 @@ Detailed documentation is provided in the following files:
 These documents describe exactly what was done, why specific choices were made, and how the analysis can be reproduced or extended.
 
 ---
-
 ## Data
 
 This project uses publicly available shotgun metagenomic datasets from NCBI/ENA.
 
-The current implementation focuses on a single dataset to prioritize clarity and reproducibility.
+### Primary dataset (proof-of-concept)
 
-**Selected dataset:**
-- Sediment shotgun metagenome from arid-tropical natural wetlands  
-  (BioProject **PRJNA972844**)
+- **BioProject:** PRJNA1081682  
+- **Run:** SRR28167100  
+- **Environment:** Cow-dung-derived microbial consortium enriched for PET, PE and PS degradation  
+- **Sequencing platform:** DNBSEQ-G400 (PE150)  
+- **Rationale:** This dataset represents an environment with expected plastic-degradation potential and was used to establish and validate the workflow.
 
----
+### Replication datasets (environmental contrast)
+
+To assess robustness and ecological specificity, the pipeline is being replicated on environmental sediment metagenomes with no known plastic enrichment.
+
 
 ## Project status
 

@@ -20,3 +20,16 @@ These results indicate high-quality input data suitable for metagenomic assembly
 
 The assembly shows typical fragmentation for complex landfill microbiomes
 and is suitable for downstream gene prediction and functional screening.
+
+## Comparative summary
+
+The file `results/summary/comparative_summary.tsv` provides a direct comparison of plastic-degradation gene potential across environments.
+
+It summarizes:
+- high-confidence PlasticDB hits
+- PlasticDB grey-zone candidates
+- PAZy hits
+- shared genes between PAZy and PlasticDB
+
+This table serves as the main quantitative basis for the environmental contrast discussed in `results/interpretation.md`.
+

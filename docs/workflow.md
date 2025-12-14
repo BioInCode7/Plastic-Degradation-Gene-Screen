@@ -85,7 +85,7 @@ Protein sequences are used for all downstream analyses.
 
 ## 4. Reference Databases
 
-Two complementary reference databases are used for targeted screening.
+Two conceptually different reference databases were used to balance sensitivity and confidence.
 
 ### 4.1 PlasticDB
 
@@ -142,41 +142,35 @@ data/databases/pazy/
 
 results/blast/
 
-
 ## 6. Filtering of Candidate Hits
 
-BLAST results are filtered using thresholds on:
+BLAST results are filtered in two stages:
 
-- Percent identity
-- Alignment length
-- Query coverage
+1. **Database-specific primary filters**, applied independently to PlasticDB and PAZy hits.
+2. **High-confidence prioritization of PlasticDB-only candidates**, based on percent identity and query coverage thresholds.
 
 Filtering is performed using `awk` and standard Unix tools.
 
-Filtered hit tables represent candidate genes potentially involved in plastic degradation.
+## 7. Result Summarization and Visualization
 
-## 7. Result Summarization
-
-Filtered hits are summarized to:
+Filtered hit tables are summarized to:
 
 - Count unique candidate genes
 - Identify genes detected by both databases
-- Associate hits with polymer types (PAZy)
+- Identify PlasticDB-only candidates
+- Associate PAZy hits with polymer types
 
-**Output directory:**
-results/summary/
-
-
-These summary files form the basis for downstream interpretation.
-
-### Visualization
-
-Summary figures were generated in R from final result tables
+Summary figures were generated in R from final result tables  
 (see `analysis/figures/`).
 
-results/interpretation.md
+These summary files form the basis for downstream interpretation  
+(documented in `results/interpretation.md`).
 
-The distribution of candidates across databases is visualized
+The distribution of candidates across databases is visualized  
 in a Venn diagram (Figure 1).
+
+
+High-confidence PlasticDB-only candidates were defined as hits with ≥35% amino acid identity and ≥60% query coverage.
+For each predicted ORF, only the best-scoring PlasticDB hit (highest bitscore) was retained.
 
 

@@ -219,11 +219,11 @@ data/qc/
 data/assembly/*/intermediate_contigs/
 data/assembly/*/log/
 
-# Gene prediction intermediates (can be regenerated)
+# Gene prediction intermediates
 data/genes/*.fna
 data/genes/*.gff
 
-# BLAST databases (index files)
+# BLAST databases
 *.pin
 *.phr
 *.psq
@@ -235,8 +235,6 @@ data/genes/*.gff
 *.pog
 *.pos
 
-# Temporary / local history files
+# Temporary / local history
 .Rhistory
-
-# R / VennDiagram logs
 VennDiagram*.log

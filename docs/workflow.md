@@ -169,3 +169,14 @@ results/summary/
 
 These summary files form the basis for downstream interpretation.
 
+### Visualization
+
+Summary figures were generated in R from final result tables
+(see `analysis/figures/`).
+
+results/interpretation.md
+
+The distribution of candidates across databases is visualized
+in a Venn diagram (Figure 1).
+
+

@@ -237,3 +237,6 @@ data/genes/*.gff
 
 # Temporary / local history files
 .Rhistory
+
+# R / VennDiagram logs
+VennDiagram*.log

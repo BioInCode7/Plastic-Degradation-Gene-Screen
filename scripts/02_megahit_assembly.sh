@@ -1,7 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
 SAMPLE=$1
 
 QC_DIR=data/qc
 ASM_DIR=data/assembly/${SAMPLE}_megahit
+
+mkdir -p ${ASM_DIR}
 
 megahit \
   -1 ${QC_DIR}/${SAMPLE}_1.qc.fastq.gz \

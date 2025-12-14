@@ -7,6 +7,8 @@ RAW_DIR=data/raw
 QC_DIR=data/qc
 RESULTS_DIR=results
 
+mkdir -p ${QC_DIR}
+
 fastp \
   -i ${RAW_DIR}/${SAMPLE}_1.fastq.gz \
   -I ${RAW_DIR}/${SAMPLE}_2.fastq.gz \
@@ -20,3 +22,4 @@ fastp \
   --thread 30 \
   --html ${RESULTS_DIR}/${SAMPLE}_fastp.html \
   --json ${RESULTS_DIR}/${SAMPLE}_fastp.json
+

@@ -97,6 +97,35 @@ Next step: replication of the workflow across additional metagenomes.
 
 ---
 
+Environmental contrast: enriched vs non-enriched systems
+
+To evaluate whether plastic exposure shapes the genetic potential for plastic biodegradation, the workflow was applied to two contrasting metagenomic datasets:
+
+a plastic-enriched cow dung microbial consortium (SRR28167100), used as a proof-of-concept system
+
+a natural wetland sediment metagenome with no known plastic enrichment (SRR24575585), used as an environmental replication
+
+PAZy: stable signal of biochemically validated enzymes
+
+The number of PAZy hits was comparable between environments (75 vs 53 genes).
+This suggests that enzymes with experimentally validated plastic-degrading activity are broadly distributed across environmental microbiomes, even in systems without explicit plastic enrichment.
+
+This observation supports the idea that known plastic-active enzymes may represent a small, conserved subset of a much larger functional space.
+
+PlasticDB high-confidence: clear enrichment effect
+
+In contrast, high-confidence PlasticDB hits (≥35% identity, ≥60% query coverage) showed a strong enrichment in the plastic-exposed system (591 vs 90 genes).
+
+This indicates that plastic enrichment substantially increases the abundance of genes related to polymer degradation, even when restricting analysis to relatively stringent similarity thresholds.
+
+Grey-zone candidates: primary source of ecological divergence
+
+The largest difference between environments was observed in the PlasticDB grey-zone category, which captures lower-similarity but potentially informative candidates (3410 vs 702 genes).
+
+These results suggest that microbial adaptation to plastics is primarily reflected in the expansion of putative or uncharacterized enzymatic functions, rather than in the proliferation of already known plastic-degrading enzymes.
+
+Taken together, these findings highlight the importance of separating high-confidence enzymatic evidence from emerging functional potential, and justify the use of a dual-database strategy when screening metagenomes for plastic degradation genes.
+
 ## Author
 
 **Jesús Salinas**  

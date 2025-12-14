@@ -1,5 +1,16 @@
 # Plastic-Degradation-Gene-Screen
 
+### Abstract
+
+Plastic pollution represents a growing environmental challenge, and microbial biodegradation has emerged as a potential natural mitigation process. However, assessing the genetic potential for plastic degradation in complex environmental microbiomes remains difficult due to incomplete functional annotation and the risk of overinterpreting weak sequence similarity.
+
+Here, we present a targeted, hypothesis-driven bioinformatics workflow to screen environmental metagenomes for plastic-degradation-related genes using explicit evidence tiers. The pipeline combines two complementary reference databases: PlasticDB, which provides broad literature-curated associations, and PAZy, which includes only biochemically validated plastic-active enzymes.
+
+We applied this workflow to three contrasting metagenomic datasets: a plastic-enriched cow-dung microbial consortium, a natural wetland sediment, and an oligotrophic marine water sample. While PAZy-supported genes were detected at comparable levels across enriched and non-enriched environments, high-confidence PlasticDB hits showed strong enrichment in the plastic-exposed system. The largest ecological divergence was observed within a grey-zone category of lower-similarity PlasticDB candidates, suggesting that microbial adaptation to plastics is primarily reflected in the expansion of putative or uncharacterized functions rather than known enzymes. No detectable plastic-degradation gene potential was observed in the oligotrophic marine dataset, serving as a conservative negative control.
+
+These results highlight the importance of separating confidence levels when screening for plastic-degradation genes and demonstrate that enriched environments concentrate a large, unexplored reservoir of potential plastic-associated functions. The presented workflow provides a transparent and reproducible framework for comparative screening of plastic-degradation gene potential across ecosystems.
+
+
 ## Overview
 
 Plastic pollution is a major environmental problem, and microbial biodegradation is considered a promising natural mitigation strategy.  

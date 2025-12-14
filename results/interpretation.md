@@ -16,12 +16,9 @@ This analysis should therefore be viewed as a hypothesis-generating screen rathe
 
 ## 2. Overview of detected candidates
 
-Screening of the SRR28167100 metagenome resulted in:
+Screening of the SRR28167100 metagenome revealed a substantial number of genes with significant similarity to PlasticDB entries and a smaller, more conservative set of genes matching PAZy enzymes, with partial overlap between both databases.
 
-- X predicted genes with significant similarity to PlasticDB entries
-- Y predicted genes with significant similarity to PAZy enzymes
-- Z genes supported by both databases
-- X−Z genes detected exclusively via PlasticDB
+This separation allows an explicit distinction between high-confidence enzymatic evidence and broader, putative plastic-associated genetic potential, as summarized in the comparative results table.
 
 This separation allows explicit distinction between high-confidence enzymatic matches and broader, putative plastic-associated genes.
 
@@ -78,3 +75,19 @@ Despite their limitations, these results provide:
 - a reproducible framework for comparative screening across metagenomes
 
 This approach enables rational prioritization of environments and candidate genes without overinterpreting sequence similarity as functional proof.
+
+## 8. Environmental contrast: enriched vs non-enriched systems
+
+To evaluate whether plastic exposure shapes the genetic potential for plastic biodegradation, the workflow was applied to two contrasting metagenomic datasets:
+
+- a plastic-enriched cow dung microbial consortium (SRR28167100)
+- a natural wetland sediment metagenome without known plastic enrichment (SRR24575585)
+
+Despite their different environmental contexts, both metagenomes contained a comparable number of PAZy-supported hits, indicating that biochemically validated plastic-active enzymes are broadly distributed across microbial ecosystems.
+
+In contrast, high-confidence PlasticDB hits were strongly enriched in the plastic-exposed system, suggesting that plastic enrichment promotes the expansion of genes associated with polymer degradation even under relatively strict similarity thresholds.
+
+The largest divergence between environments was observed in the PlasticDB grey-zone category. This indicates that ecological adaptation to plastics is primarily reflected in the expansion of putative or uncharacterized enzymatic functions rather than in the proliferation of already known plastic-degrading enzymes.
+
+Together, these observations support a model in which plastic exposure amplifies latent functional diversity rather than introducing entirely novel enzymatic capabilities.
+

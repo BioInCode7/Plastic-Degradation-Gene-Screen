@@ -91,3 +91,23 @@ The largest divergence between environments was observed in the PlasticDB grey-z
 
 Together, these observations support a model in which plastic exposure amplifies latent functional diversity rather than introducing entirely novel enzymatic capabilities.
 
+## 9. Oligotrophic marine control metagenome
+
+To further contextualize the observed environmental contrasts, the workflow was applied to a third metagenomic dataset derived from an oligotrophic marine environment (SRR5943934).
+
+This dataset is characterized by very low sequencing depth and biomass, resulting in:
+- a minimal metagenome assembly (3 contigs >1 kb)
+- a very small number of predicted protein-coding genes
+
+No candidate genes matching PlasticDB or PAZy were detected in this sample, under either high-confidence or grey-zone criteria.
+
+This absence of detectable signal is biologically consistent with:
+- the oligotrophic nature of the environment
+- the lack of known plastic enrichment
+- the extremely limited genomic sampling depth
+
+Importantly, this result does not reflect a failure of the pipeline, but rather demonstrates its conservative behavior in the absence of supporting evidence.
+
+Together with the enriched cow-dung consortium and the natural wetland sediment, this marine dataset serves as a negative control that strengthens the ecological interpretation of the results by explicitly illustrating conditions under which plastic-degradation gene potential is not detected.
+
+

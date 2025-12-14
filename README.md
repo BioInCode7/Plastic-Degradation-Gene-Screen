@@ -87,22 +87,6 @@ This project uses publicly available shotgun metagenomic datasets from NCBI/ENA.
 
 To assess robustness and ecological specificity, the pipeline is being replicated on environmental sediment metagenomes with no known plastic enrichment.
 
-## Usage
-
-This pipeline is sample-aware. Each script expects a sample identifier
-(e.g. an SRA run accession such as `SRR24575585`) as its first argument.
-
-Example workflow for a single sample:
-
-```bash
-bash scripts/01_fastp_qc.sh SRR24575585
-bash scripts/02_megahit_assembly.sh SRR24575585
-bash scripts/03_prodigal_gene_prediction.sh SRR24575585
-bash scripts/04b_blastp_pazy.sh SRR24575585
-bash scripts/04a_blastp_plasticdb.sh SRR24575585
-bash scripts/05_filter_and_prioritize_plasticdb_hits.sh SRR24575585
-
-
 ## Project status
 
 ✅ **Phase 1 complete**  
@@ -117,3 +101,18 @@ Next step: replication of the workflow across additional metagenomes.
 
 **Jesús Salinas**  
 Postdoctoral Researcher, Microbiology, University of Almería
+
+## Usage
+
+This pipeline is sample-aware. Each script expects a sample identifier
+(e.g. an SRA run accession such as `SRR24575585`) as its first argument.
+
+Example workflow for a single sample:
+
+```bash
+bash scripts/01_fastp_qc.sh SRR24575585
+bash scripts/02_megahit_assembly.sh SRR24575585
+bash scripts/03_prodigal_gene_prediction.sh SRR24575585
+bash scripts/04b_blastp_pazy.sh SRR24575585
+bash scripts/04a_blastp_plasticdb.sh SRR24575585
+bash scripts/05_filter_and_prioritize_plasticdb_hits.sh SRR24575585

@@ -1,113 +1,123 @@
-# Methods: Targeted Screening for Plastic-Degradation Genes
+# Methods
 
-This section describes the methodological rationale behind the bioinformatics workflow implemented in this repository.  
-The emphasis is placed on conservative detection, reproducibility, and transparent decision-making.
+## Overview
 
----
+This repository implements a targeted, question-driven bioinformatics workflow to screen environmental metagenomes for genetic potential related to plastic biodegradation.
 
-## Overall Strategy
+Rather than performing full functional annotation, the workflow focuses on the detection of sequence similarity to curated sets of plastic-degrading enzymes, using explicit evidence levels and transparent filtering criteria.
 
-Rather than performing full functional annotation of the metagenome, a targeted screening approach was applied.
-
-This strategy aims to answer a focused biological question:
-
-> Does this environmental metagenome contain genes similar to **known plastic-degrading enzymes**?
-
-The workflow is therefore designed to **detect genetic potential**, not to infer activity or degradation rates.
+All analyses were performed on a single environmental shotgun metagenome as a proof of concept, with the workflow designed to be easily extended to additional datasets.
 
 ---
 
-## Quality Control and Assembly
+## Input data
 
-Raw shotgun metagenomic reads were quality-filtered using `fastp` to remove low-quality bases and adapter contamination.
+The input dataset consists of paired-end shotgun metagenomic reads obtained from the NCBI Sequence Read Archive (SRA).
 
-Assembly was performed using `MEGAHIT`, which is optimized for large and complex metagenomic datasets.  
-Assembled contigs increase the sensitivity and reliability of downstream homology-based gene detection compared to read-level searches.
+- BioProject: PRJNA972844 
+- Example run: SRR28167100 
+- Sample type: environmental sediment metagenome 
 
----
-
-## Gene Prediction
-
-Open reading frames were predicted using `Prodigal` in metagenomic mode.
-
-Only predicted protein sequences were used for functional screening, as protein-level similarity is more informative for enzyme detection than nucleotide-level comparisons.
+Raw sequencing data were downloaded locally but are not tracked in the repository due to size constraints and reproducibility considerations.
 
 ---
 
-## Reference Databases
+## Quality control
+
+Raw reads were processed using `fastp` to remove low-quality bases and adapter contamination.
+
+Default parameters were used, with quality-controlled reads retained for downstream assembly.
+Quality control reports (HTML and JSON) are included in the `results/` directory.
+
+---
+
+## Metagenome assembly
+
+Quality-controlled reads were assembled de novo using `MEGAHIT`.
+
+The final assembly (`final.contigs.fa`) was used for all downstream analyses.
+Intermediate assembly files were generated but are excluded from version control.
+
+---
+
+## Gene prediction
+
+Protein-coding genes were predicted from assembled contigs using `Prodigal` in metagenomic mode.
+
+This step produced:
+- nucleotide gene sequences
+- predicted protein sequences
+- GFF annotations
+
+Downstream analyses were performed using the predicted protein sequences.
+
+---
+
+## Reference databases
+
+Two complementary reference databases were used to screen for plastic-degradation-related genes:
 
 ### PlasticDB
 
-PlasticDB was used as a broad reference collection of plastic-associated and plastic-degrading enzymes reported in the literature.
+PlasticDB is a literature-curated database of microorganisms and proteins reported to be associated with plastic biodegradation, including both characterized and putative enzymes.
 
-This database includes enzymes with varying levels of experimental support and provides **high sensitivity** for detecting candidate genes.
+Protein sequences were downloaded from PlasticDB, merged across release years, deduplicated, and formatted as a local BLAST protein database.
 
----
+This database provides broad coverage and sensitivity.
 
-### PAZy (Plastics-Active Enzymes Database)
+### PAZy
 
-PAZy was used as a **high-confidence reference database**, as it contains only biochemically characterized plastic-active enzymes.
+PAZy (Plastics-Active Enzymes Database) contains only enzymes with experimental, biochemical evidence of activity on plastic polymers.
 
-Because PAZy is intentionally conservative and relatively small, hits against this database are interpreted as **strong evidence of functional similarity**.
+Protein identifiers listed in PAZy were used to retrieve corresponding protein sequences from public repositories (e.g. UniProt and NCBI), followed by deduplication and BLAST database construction.
 
-Using both databases allows a balance between sensitivity (PlasticDB) and specificity (PAZy).
-
----
-
-## Similarity Search
-
-Protein sequences predicted from the metagenome were searched against both databases using `blastp`.
-
-BLAST was chosen instead of profile HMMs for the following reasons:
-
-- Transparent alignment-based interpretation
-- Suitable for relatively small, curated reference sets
-- Easier threshold justification in an educational and exploratory context
+This database provides high-specificity, conservative evidence.
 
 ---
 
-## Filtering Criteria
+## Targeted sequence similarity search
 
-BLAST hits were filtered using conservative thresholds based on:
+Predicted proteins from the metagenome were compared against both reference databases using `BLASTp`.
 
-- Minimum percent identity
-- Minimum alignment length
-- Minimum query coverage
+Searches were performed locally using protein–protein comparisons.
 
-These criteria aim to reduce spurious matches to generic hydrolases while retaining candidates plausibly related to plastic degradation.
-
-Thresholds were intentionally chosen to favor **specificity over sensitivity**.
+Separate BLAST runs were executed for PlasticDB and PAZy.
 
 ---
 
-## Interpretation of Results
+## Filtering criteria
 
-Detected genes are interpreted as **putative candidates** based on sequence similarity alone.
+To reduce spurious matches, BLAST hits were filtered using explicit thresholds:
 
-No claims are made regarding:
+- minimum percent identity
+- minimum alignment length
+- minimum query coverage
+- E-value threshold
 
-- Enzymatic activity
-- Expression levels
-- In situ plastic degradation
+Filtering parameters were chosen to balance sensitivity and specificity and are documented in the analysis scripts.
 
-The results represent a **screening-level assessment** of genetic potential in the analyzed metagenome.
-
----
-
-## Limitations
-
-This approach does not detect:
-
-- Novel plastic-degrading enzymes without homology to known references
-- Regulatory or expression-level information
-- Polymer specificity beyond database annotation
-
-These limitations are inherent to similarity-based screening and are explicitly acknowledged.
+Only filtered hits were used for downstream summarization.
 
 ---
 
-## Reproducibility
+## Result summarization
 
-All analyses were performed using open-source tools with documented parameters.
+Filtered BLAST results were summarized to:
 
-Scripts, reference data, and intermediate results are version-controlled to ensure reproducibility and transparency.
+- identify genes matching PlasticDB and/or PAZy entries
+- quantify overlap between databases
+- classify detected genes by associated polymer type (when available)
+
+Summary tables are provided in the `results/summary/` directory.
+
+---
+
+## Reproducibility notes
+
+This repository includes:
+- all scripts required to reproduce the analysis
+- reference database construction steps
+- environment specification (`environment.yml`)
+
+Large raw datasets and intermediate files are excluded from version control but can be regenerated following the documented workflow.
+
